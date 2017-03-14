@@ -38,5 +38,17 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Sepolicy
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
+# skip unnecessary
+BOARD_SKIP_ANDROID_DOC_BUILD := true
+BUILD_EMULATOR := false
+ANDROID_NO_TEST_CHECK := true
+
+# disable block based OTA
+BLOCK_BASED_OTA := false
+
+# add superuser
+WITH_SU := true
+
+
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk

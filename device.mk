@@ -20,6 +20,13 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/xiaomi/kenzo/kenzo-vendor.mk)
 
+# add my prebuilts
+$(call inherit-product-if-exists, vendor/lurepheonix/vendor.mk)
+
+# root
+PRODUCT_PACKAGES += \
+    su
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
