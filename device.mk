@@ -27,6 +27,10 @@ $(call inherit-product-if-exists, vendor/lurepheonix/vendor.mk)
 PRODUCT_PACKAGES += \
     su
 
+#Daydream VR
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
