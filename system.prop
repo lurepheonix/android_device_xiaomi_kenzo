@@ -7,6 +7,8 @@ persist.audio.fluence.audiorec=false
 persist.audio.fluence.spk.mono=true
 persist.audio.fluence.voicerec=true
 voice.voip.conc.disabled=true
+lpa.decode=true
+lpa.use-stagefright=true
 
 # Radio
 persist.radio.cs_srv_type=1

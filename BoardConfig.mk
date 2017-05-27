@@ -49,6 +49,38 @@ BLOCK_BASED_OTA := false
 # add superuser
 WITH_SU := true
 
+# Qualcomm Clang
+TARGET_USE_SDCLANG := true
+
+AUDIO_FEATURE_ENABLED_PCM_OFFLOAD_24 := false
+AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := false
+
+MM_AUDIO_ENABLED_FTM := true
+MM_AUDIO_ENABLED_SAFX := true
+TARGET_USES_QCOM_MM_AUDIO := true
+AUDIO_FEATURE_ENABLED_SSR := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS := false
+#AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
+AUDIO_FEATURE_ENABLED_FLUENCE := false
+AUDIO_FEATURE_ENABLED_HFP := false
+DOLBY_ENABLE := true
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := false
+#AUDIO_FEATURE_ENABLED_DTS_EAGLE := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
+#BOARD_SUPPORTS_SOUND_TRIGGER := true
+#AUDIO_FEATURE_ENABLED_AUXPCM_BT := false
+#AUDIO_FEATURE_ENABLED_HW_ACCELERATED_EFFECTS := true
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk
